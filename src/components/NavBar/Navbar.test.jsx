@@ -20,7 +20,7 @@ describe('NavBar component', () => {
         )
     })
 
-    it('displays a NavBar with 2 children', () => {
+    it('displays a navbar with 2 links', () => {
         const nav = screen.getByRole("navigation")
 
         expect(nav).toBeInTheDocument()
