@@ -9,8 +9,6 @@ expect.extend(matchers);
 
 import NavBar from '.'
 
-import NavBar from '.'
-
 describe('NavBar component', () => {
     beforeEach(() => {
         render(
@@ -20,11 +18,11 @@ describe('NavBar component', () => {
         )
     })
 
-    it('displays a navbar with 2 links', () => {
+    it('displays a navbar with 4 links', () => {
         const nav = screen.getByRole("navigation")
 
         expect(nav).toBeInTheDocument()
-        expect(nav.childNodes.length).toBe(2)
+        expect(nav.childNodes.length).toBe(4)
     })
 
     afterEach(() => {
