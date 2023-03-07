@@ -1,0 +1,25 @@
+.home-nav-box{
+    display: grid;
+    position: absolute;
+    grid-template-columns: auto auto;
+    column-gap: 40px;
+    row-gap: 40px;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.nav-box-link{
+    border: 3px solid white;
+    border-radius: 40px;
+    background-color: black;
+    color: white;
+    padding: 20px 20px 20px 20px;
+    font-size: 3em;
+    font-weight: bolder;
+    width: 400px;
+    height: 200px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

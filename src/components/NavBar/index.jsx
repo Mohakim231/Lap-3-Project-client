@@ -1,31 +1,54 @@
-import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import React from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
+import './styles.css';
 
 const NavBar = () => {
+  const activeStyle = {
+    textDecoration:'underline',
+    color: '#17cf97'
+  }
+
   return (
     <>
     <nav>
-      <ul>
-        <Link to='/'>
+      <h1 className='nav-heading'>Notes</h1>
+      <ul className='nav-list'>
+        <NavLink 
+          to='/'
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          className='nav-links'
+        >
           <li>
             Home
           </li>
-        </Link>
-        <Link to='/create'>
+        </NavLink>
+        <NavLink 
+          to='/create'
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          className='nav-links'
+        >
           <li>
             Create
           </li>
-        </Link>
-        <Link to='/Public'>
+        </NavLink>
+        <NavLink 
+          to='/Public'
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          className='nav-links'
+        >
           <li>
             Public Notes
           </li>
-        </Link>
-        <Link to='/forum'>
+        </NavLink>
+        <NavLink 
+          to='/forum'
+          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          className='nav-links'
+        >
           <li>
             Forum
           </li>
-        </Link>
+        </NavLink>
       </ul>
     </nav>
     <Outlet/>
