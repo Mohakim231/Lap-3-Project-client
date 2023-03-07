@@ -12,10 +12,10 @@ function App() {
         <Route path='/' element={<NavBar/>}>
           <Route index element={<Signup />}/>
           <Route path='/login' element={<Login />}/>
-          <Route path='home' element={<Home/>}/>
-          <Route path='forum' element={<Forum/>}/>
-          <Route path='create' element={<Create/>}/>
-          <Route path='Public' element={<PublicNote/>}/>
+          <secureRoute path='home' element={<Home/>}/>
+          <secureRoute path='forum' element={<Forum/>}/>
+          <secureRoute path='create' element={<Create/>}/>
+          <secureRoute path='Public' element={<PublicNote/>}/>
         </Route>
       </Routes>
     </div>
