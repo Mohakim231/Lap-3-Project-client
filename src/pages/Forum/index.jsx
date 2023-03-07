@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { Note } from '../../components'
 
 const Forum = () => {
   return (
-    <div>Forum</div>
+    <div>
+      <Note />
+    </div>
   )
 }
 

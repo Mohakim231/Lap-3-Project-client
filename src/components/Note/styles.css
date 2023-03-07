@@ -1,0 +1,16 @@
+.note-wrapper{
+    width: 450px;
+    background-color: #ffee75;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+.note-title{
+    font-size: 2em;
+    padding: 10px 0 5px 10px;
+    background-color: #b89400;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+.note-content{
+    padding: 15px 10px 5px 10px;
+}
