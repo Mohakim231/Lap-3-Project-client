@@ -23,7 +23,7 @@ const Home = () => {
           <div
             className='nav-box'
           >
-            Create
+            Public Notes
           </div>
         </Link>
         <Link
@@ -33,7 +33,7 @@ const Home = () => {
           <div
             className='nav-box'
           >
-            Public Notes
+            Send Notes
           </div>
         </Link>
         <Link
