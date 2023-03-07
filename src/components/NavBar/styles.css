@@ -1,0 +1,26 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    border-radius: 1em;
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+}
+.nav-heading{
+    color: white;
+    margin-left: 40px;
+    font-size: 2.5em;
+}
+.nav-list{
+    display: flex;
+    list-style: none;
+}
+.nav-links{
+    text-decoration: none;
+    margin-right: 40px;
+    font-weight: 800;
+    font-size: 2em;
+    color: white;
+}

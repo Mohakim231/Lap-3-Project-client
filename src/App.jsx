@@ -10,9 +10,9 @@ function App() {
       <Routes>
         <Route path='/' element={<NavBar/>}>
           <Route index element={<Home/>}/>
-          <Route path='/forum' element={<Forum/>}/>
-          <Route path='/create' element={<Create/>}/>
-          <Route path='/Public' element={<PublicNote/>}/>
+          <Route path='forum' element={<Forum/>}/>
+          <Route path='create' element={<Create/>}/>
+          <Route path='Public' element={<PublicNote/>}/>
         </Route>
       </Routes>
     </div>
