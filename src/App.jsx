@@ -1,6 +1,7 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import NavBar from './components/NavBar'
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import secureRoute from './components/secureRoute';
 import { Create, Forum, Home, PublicNote, Signup, Login } from './pages'
 
 function App() {
