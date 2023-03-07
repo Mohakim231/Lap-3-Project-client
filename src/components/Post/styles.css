@@ -43,7 +43,7 @@ form .content .details .privacy{
     margin-top: 1px;
     font-weight: 500;
 }
-.post form :where(textarea, button){
+.post form :where(textarea, input, button){
     width: 100%;
     outline: none;
     border: none;
@@ -52,7 +52,7 @@ form .content .details .privacy{
     resize: none;
     font-size: 18px;
     margin-top: 30px;
-    min-height: 100px;
+    min-height: 80px;
 }
 form .options{
     height: 57px;
@@ -71,4 +71,13 @@ form .options .list{
     width: 42px;
     border-radius: 50%;
     background: #f0f1f4;
+}
+.note-input-category{
+    font-size: 1em;
+    padding-bottom: 15px;
+    padding-top: 5px;
+}
+.note-input-title{
+    font-size: 1.5em;
+    padding-top: 10px;
 }

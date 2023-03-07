@@ -26,6 +26,10 @@ const NavBar = () => {
     setShowPost(true);
   }
 
+  const handleCancel = () => {
+    setShowPost(false);
+  }
+
   return (
     <>
       <nav>
@@ -37,7 +41,6 @@ const NavBar = () => {
                 to='/'
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 className='nav-links'
-                onClick={handleLinkClick}
               >
                 <li>
                   Home
@@ -84,7 +87,7 @@ const NavBar = () => {
           </div>
         )}
       </nav>
-      {showPost && <Post />}
+      {showPost && <Post handleCancel={handleCancel} />}
       <Outlet />
     </>
   )

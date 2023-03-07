@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.css'
 
-const Post = () => {
+const Post = ({ handleCancel}) => {
   return (
     <div className='post-form-container'>
         <div className='post-form-wrapper'>
@@ -13,20 +13,18 @@ const Post = () => {
                     <div className='details'>
                       <p>Username</p>
                       <div className='privacy'>
-                        <i></i>
                         <span>Public</span>
-                        <i className=''></i>
                       </div>
                     </div>
                   </div>
+                  <input className='note-input-title' placeholder='Title?'/>
                   <textarea placeholder="what's on your mind UserName"></textarea>
+                  <input className='note-input-category' placeholder='category?'/>
                   <div className='options'>
                     <p>Add to your note..</p>
-                    <div className='list'>
-                      <img src='' alt=''/>
-                    </div>
                   </div>
                   <button>Post</button>
+                  <button onClick={handleCancel}>Cancel</button>
                 </form>
             </section>
         </div>
