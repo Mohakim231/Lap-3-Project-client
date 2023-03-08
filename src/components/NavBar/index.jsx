@@ -84,10 +84,10 @@ const NavBar = () => {
           </>
         ) : (
           <div className='nav-menu-buttons'>
-            <button className='nav-button' onClick={handleButtonClick}>
+            <button className='nav-button' onClick={handleButtonClick} aria-label="back to menu">
               Back to menu
             </button>
-            <button onClick={handleCreateClick}>create</button>
+            <button onClick={handleCreateClick} aria-label="create post">create</button>
           </div>
         )}
       </nav>

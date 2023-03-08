@@ -6,7 +6,7 @@ const Post = ({ handleCancel}) => {
     <div className='post-form-container'>
         <div className='post-form-wrapper'>
             <section className='post'>
-                <header>Create Note</header>
+                <header aria-label="create note box heading">Create Note</header>
                 <form>
                   <div className='content'>
                     <img src='' alt=''/>
