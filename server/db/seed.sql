@@ -1,0 +1,30 @@
+INSERT INTO
+    users (
+        username,
+        password,
+        profile_pic,
+        user_email,
+        isAdmin
+    )
+VALUES
+    (
+        'BearNecessities',
+        'password1',
+        'https://placebear.com/200/200',
+        ':@@@@@',
+        FALSE
+    ),
+    (
+        'PurrfectMatch',
+        'password2',
+        'https://placekitten.com/200/200',
+        ':@@@@@',
+        FALSE
+    ),
+    (
+        'Clawverfield',
+        'adminpassword',
+        'https://placebear.com/200/200',
+        ':@@@@@',
+        TRUE
+    );
