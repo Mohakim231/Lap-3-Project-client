@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+<<<<<<< HEAD
     "test": "vitest --reporter verbose",
     "coverage": "vitest run --coverage"
   },
@@ -16,6 +17,15 @@
     "body-parser": "^1.20.2",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
+=======
+    "connect": "node db/setup.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "pg": "^8.10.0",
+>>>>>>> 03e13276d1a48ffee9be78c0b66d34261351c5f1
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.2"
