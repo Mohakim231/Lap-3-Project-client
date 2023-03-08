@@ -1,24 +1,26 @@
 import React from 'react';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { screen, render, cleanup, getByRole } from '@testing-library/react';
+import { screen, render, cleanup } from '@testing-library/react';
 
 import { BrowserRouter } from 'react-router-dom';
 
 import matchers from '@testing-library/jest-dom/matchers';
 expect.extend(matchers);
 
-import Home from '.'
+import Post from '.'
 
-
-describe('Home', () => {
+describe('Post component', () => {
     beforeEach(() => {
-        render(<Home />)
+        render(<Post />)
+    })
+
+    it('should display a textbox', () => {
+        const textbox = screen.getByLabelText("what's on your mind");
+
+        expect(textbox).toBeInTheDocument()
     })
 
     afterEach(() => {
         cleanup();
     })
-
- 
-
 })

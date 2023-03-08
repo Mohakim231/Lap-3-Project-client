@@ -18,6 +18,15 @@ describe('NavBar component', () => {
         )
     })
 
+    afterEach(() => {
+        cleanup();
+    })
+
+    it('should display a heading', () => {
+        const element = screen.getByRole('heading')
+        expect(element).toBeInTheDocument()
+    })
+
     it('displays a navbar with 4 links', () => {
         const nav = screen.getByRole("navigation")
 

@@ -18,7 +18,7 @@ const Post = ({ handleCancel}) => {
                     </div>
                   </div>
                   <input className='note-input-title' placeholder='Title?'/>
-                  <textarea placeholder="what's on your mind UserName"></textarea>
+                  <textarea placeholder="what's on your mind UserName" aria-label="what's on your mind"></textarea>
                   <input className='note-input-category' placeholder='category?'/>
                   <div className='options'>
                     <p>Add to your note..</p>

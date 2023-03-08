@@ -3,7 +3,7 @@ import { Note } from '../../components'
 
 const Forum = () => {
   return (
-    <div>
+    <div aria-label='note'>
       <Note />
     </div>
   )
