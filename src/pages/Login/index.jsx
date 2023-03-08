@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import anxios from "axios";
+import { Link } from 'react-router-dom';
 import axios from 'axios';
+import '../style.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -31,6 +32,7 @@ const Login = () => {
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
       </div>
       <button type='submit'>Login</button>
+      <p>Don't have an account? <Link to='/signup'>Signup here</Link></p>
     </form>
   );
 };
