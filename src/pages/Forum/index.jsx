@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { PublicNote } from '..';
-import { Category } from '../../components'
+import { PublicNote } from '../../components'
 
 const Forum = () => {
   const [category, setCategory] = useState([]);
