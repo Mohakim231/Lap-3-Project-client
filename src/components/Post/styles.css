@@ -1,4 +1,8 @@
 .post-form-container{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
     width: 500px;
     background: #fff;
     border-radius: 10px;
@@ -80,4 +84,26 @@ form .options .list{
 .note-input-title{
     font-size: 1.5em;
     padding-top: 10px;
+}
+.visiblity header{
+    padding: 17px 0;
+    text-align: center;
+    border-bottom: 1px solid #bfbfbf;
+}
+.visiblity header .arrow-back{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 25px;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    border-radius: 50%;
+    color: #747474;
+    background: #e4e6eb;
+}
+.visiblity header p{
+    font-size: 22px;
+    font-weight: 600;
 }
