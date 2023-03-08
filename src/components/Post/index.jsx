@@ -23,8 +23,8 @@ const Post = ({ handleCancel}) => {
                   <div className='options'>
                     <p>Add to your note..</p>
                   </div>
-                  <button>Post</button>
-                  <button onClick={handleCancel}>Cancel</button>
+                  <button aria-label="post button">Post</button>
+                  <button aria-label="delete button" onClick={handleCancel}>Cancel</button>
                 </form>
             </section>
         </div>

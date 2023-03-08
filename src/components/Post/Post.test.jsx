@@ -1,6 +1,7 @@
 import React from 'react';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { screen, render, cleanup } from '@testing-library/react';
+import userEvent from '@testing-library/user-event'
 
 import { BrowserRouter } from 'react-router-dom';
 
@@ -18,6 +19,13 @@ describe('Post component', () => {
         const textbox = screen.getByLabelText("what's on your mind");
 
         expect(textbox).toBeInTheDocument()
+    })
+
+    it('should have post and delete buttons', () => {
+        const postButton = screen.getByLabelText("post button")
+        const deleteButton = screen.getByLabelText("delete button")
+
+        expect (postButton, deleteButton).toBeInTheDocument();
     })
 
     afterEach(() => {
