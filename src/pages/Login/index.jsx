@@ -1,23 +1,40 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../style.css';
+
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
+
     e.preventDefault();
+
+    const data = {
+      username: username,
+      password: password
+    }
+
     try {
-      const response = await axios.post("/Login", {
-        user,
-        password,
-      });
+      console.log(username, password)
+      const response = await axios.post("http://localhost:3000/login", data);
+
+      // check what you are getting. 
+
+      // save the sub (which is the id) to a state*(useContext)
+
+
       console.log(response.data);
+
     } catch (err) {
       console.log(err);
     }
+
+    navigate("/home");
+
   };
 
   return (
@@ -25,7 +42,7 @@ const Login = () => {
       <h2>Login</h2>
       <div>
         <label>Username</label>
-        <input type="text" value={username} onChange={(e) => setUsername(e.targetvalue)} />
+        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
       </div>
       <div>
         <label>Password</label>
@@ -36,5 +53,6 @@ const Login = () => {
     </form>
   );
 };
+
 
 export default Login;

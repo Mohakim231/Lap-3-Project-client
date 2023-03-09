@@ -15,7 +15,7 @@ const Forum = () => {
 
   useEffect(() => {
     async function loadCategory() {
-      const response = await fetch('http://localhost:3000/note/forum');
+      const response = await fetch('http://localhost:3000/forum');
       const data = await response.json();
       setCategory(data);
     }
