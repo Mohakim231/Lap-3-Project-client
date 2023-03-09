@@ -30,12 +30,6 @@ describe('Home', () => {
         expect(window.location.pathname).toBe("/notes");
     })
 
-    it("takes you to the public notes page when th epublic notes box is clicked", async () => {
-        const link = screen.getByLabelText("public notes box link");
-        await userEvent.click(link);
-        expect(window.location.pathname).toBe("/Public");
-    });
-
     it("takes you to the public notes page when the public notes box is clicked", async () => {
         const link = screen.getByLabelText("public notes box link");
         await userEvent.click(link);
