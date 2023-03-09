@@ -39,10 +39,12 @@ const Forum = () => {
   return (
     <>
       <div aria-label='note'>
-        <div>
+        <div className='category-choice-wrapper'>
           {showCategory()}
         </div>
+        <div className='forum-notes-wrapper'>
         {categoryId && <PublicNote id={categoryId} />}
+        </div>
       </div>
     </>
 
