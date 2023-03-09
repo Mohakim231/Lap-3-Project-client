@@ -36,7 +36,7 @@ const Forum = () => {
 
 
   return (
-    <div>
+    <div aria-label='note'>
       <div>
         {showCategory()}
       </div>

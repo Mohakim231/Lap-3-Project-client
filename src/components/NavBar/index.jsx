@@ -41,6 +41,7 @@ const NavBar = () => {
                 to='/'
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 className='nav-links'
+                aria-label='home page'
               >
                 <li>
                   Home
@@ -51,6 +52,7 @@ const NavBar = () => {
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 className='nav-links'
                 onClick={handleLinkClick}
+                aria-label='notes page'
               >
                 <li>
                   Notes
@@ -61,6 +63,7 @@ const NavBar = () => {
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 className='nav-links'
                 onClick={handleLinkClick}
+                aria-label="public notes page"
               >
                 <li>
                   Public Notes
@@ -71,6 +74,7 @@ const NavBar = () => {
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 className='nav-links'
                 onClick={handleLinkClick}
+                aria-label="forum page"
               >
                 <li>
                   Forum
@@ -80,10 +84,10 @@ const NavBar = () => {
           </>
         ) : (
           <div className='nav-menu-buttons'>
-            <button className='nav-button' onClick={handleButtonClick}>
+            <button className='nav-button' onClick={handleButtonClick} aria-label="back to menu">
               Back to menu
             </button>
-            <button onClick={handleCreateClick}>create</button>
+            <button onClick={handleCreateClick} aria-label="create post">create</button>
           </div>
         )}
       </nav>

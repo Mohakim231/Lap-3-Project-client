@@ -1,26 +1,30 @@
 import React from 'react';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { screen, render, cleanup } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 
 import { BrowserRouter } from 'react-router-dom';
 
 import matchers from '@testing-library/jest-dom/matchers';
 expect.extend(matchers);
 
-import Create from '.'
+import Note from '.'
 
-describe('create page', () => {
+describe('Note component', () => {
     beforeEach(() => {
         render(
             <BrowserRouter>
-                <Create />
+                <Note />
             </BrowserRouter>
-        )
+            )
+    })
+
+    it('Should display a note title', () => {
+        const noteTitle = screen.getByLabelText('noteTitle', {exact:false} );
+        
+        expect(noteTitle).toBeInTheDocument()
     })
 
     afterEach(() => {
         cleanup();
     })
-
 })

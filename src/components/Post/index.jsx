@@ -53,7 +53,7 @@ const Post = ({ handleCancel}) => {
     <div className='post-form-container'>
         <div className='post-form-wrapper'>
             <section className='post'>
-                <header>Create Note</header>
+                <header aria-label="create note box heading">Create Note</header>
                 <form>
                   <div className='content'>
                     <img src='' alt=''/>
@@ -65,13 +65,13 @@ const Post = ({ handleCancel}) => {
                     </div>
                   </div>
                   <input className='note-input-title' placeholder='Title?' value={inputTitle} onChange={handleTitle}/>
-                  <textarea placeholder="what's on your mind UserName" value={inputNote} onChange={handleNote}></textarea>
+                  <textarea placeholder="what's on your mind UserName" value={inputNote} onChange={handleNote} aria-label="what's on your mind"></textarea>
                   <input className='note-input-category' placeholder='category?' value={inputCategory} onChange={handleCategory}/>
                   <div onClick={handleImageClick} className='options'>
                     <p>Add images to your note..</p>
                   </div>
-                  <button onClick={handlePost}>Post</button>
-                  <button onClick={handleCancel}>Cancel</button>
+                  <button aria-label="post button" onClick={handlePost}>Post</button>
+                  <button aria-label="delete button" onClick={handleCancel}>Cancel</button>
                 </form>
             </section>
         </div>

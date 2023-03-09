@@ -1,6 +1,6 @@
 import React from 'react';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { screen, render, cleanup } from '@testing-library/react';
+import { screen, render, cleanup, getByRole } from '@testing-library/react';
 
 import { BrowserRouter } from 'react-router-dom';
 
@@ -15,5 +15,10 @@ describe('Home', () => {
         render(<Home />)
     })
 
-    it('Has 4 links to different pagees on the homepage')
+    afterEach(() => {
+        cleanup();
+    })
+
+ 
+
 })
