@@ -25,7 +25,7 @@ const Notes = () => {
 
 
   return (
-    <div>
+    <div aria-label="note content">
       {privateNote.map((e, i) => (
         < div className='note-wrapper' key={e.note_id} >
           <div className='note-title'>{e.note_title}</div>

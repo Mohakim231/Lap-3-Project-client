@@ -6,6 +6,15 @@
     width: 70%;
     margin: auto;
 }
+.public-notes-wrapper{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 5px;
+    row-gap: 45px;
+    width: 70%;
+    margin: auto;
+    padding-top: 50px;
+}
 .category-choice-wrapper{
     display: flex;
     flex-wrap: nowrap;

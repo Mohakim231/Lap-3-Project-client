@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import { Notes, Forum, Home, Signup, Login } from './pages';
+import { Notes, Forum, Home, Signup, Login, PublicNotes } from './pages';
 import { AuthProvider } from "./context";
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/forum" element={<Forum />} />
             <Route path="/notes" element={<Notes />} />
+            <Route path='/Public' element={<PublicNotes/>}/>
           </Route>
         </Routes>
       </AuthProvider>
