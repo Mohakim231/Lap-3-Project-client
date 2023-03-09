@@ -7,6 +7,9 @@ const Post = ({ handleCancel}) => {
   const [inputNote, setInputNote] = useState('')
   const [inputCategory, setInputCategory] = useState('')
   const [visibility, setVisibility] = useState(false)
+  const [fileInput, setFileInput] = useState('')
+  const [selectedFile, setSelectedFile] = useState('')
+  const [previewSource, setPreviewSource] = useState()
 
   function handleTitle(e) {
     setInputTitle(e.target.value)
@@ -37,7 +40,7 @@ const Post = ({ handleCancel}) => {
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
-        body: JSON.stringify({ title: inputTitle, content: inputNote, category: inputNote, user_id: 1, isPublic: visibility})
+        body: JSON.stringify({ title: inputTitle, content: inputNote, category: inputNote, user_id: 1, isPublic: visibility, file: base64EncodedImage})
       })
       .then((res) => res.json())
       .then((data) => {
@@ -47,6 +50,37 @@ const Post = ({ handleCancel}) => {
     } else {
       window.alert('cant be empty can it')
     }
+  }
+
+  const handleFileInput = (e) => {
+    const file = e.target.files[0]
+    preview(file)
+  }
+  const preview = (file) => {
+    const reader = new FileReader()
+    reader.readAsDataURL(file)
+    reader.onloadend = () => {
+      setPreviewSource(reader.result)
+    }
+  }
+
+  const uploadImage = async (base64EncodedImage) =>{
+    console.log(base64EncodedImage)
+    try {
+      await fetch('',{
+        method: 'POST',
+        body: JSON.stringify({data: base64EncodedImage}),
+        headers: {'Content-type': 'application/json'}
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const handleSubmitFile = (e) => {
+    e.preventDefault()
+    if(!previewSource) return
+    uploadImage(previewSource)
   }
   return (
     <>
@@ -80,11 +114,14 @@ const Post = ({ handleCancel}) => {
       {showImage ? (
         <div>
           <div onClick={handleCloseImage}>X</div>
-          <form className='imageForm'>
+          <form className='imageForm' onSubmit={handleSubmitFile}>
             <label for="imageURL">URL</label>
-            <input placeholder='Post your url here..' type="text" id="imageURL" name="imageURL"/>
-            <button>Submit</button>
+            <input placeholder='Post your url here..' type="file" id="imageURL" name="imageURL" value={fileInput} onChange={handleFileInput}/>
+            <button type='submit'>Submit</button>
           </form>
+          {previewSource && (
+            <img src={previewSource} alt='chosen image' style={{height: '300px'}}/>
+          )}
         </div>
       ):(<div></div>)}
     </div>
