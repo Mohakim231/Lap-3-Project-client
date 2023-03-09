@@ -1,11 +1,11 @@
 import React from 'react'
 import { Post } from '../../components'
 
-const Create = () => {
+const Notes = () => {
   return (
     <div>
     </div>
   )
 }
 
-export default Create
+export default Notes

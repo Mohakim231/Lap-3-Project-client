@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <div className='home-nav-box'>
         <Link
-          to='/'
+          to='/notes'
           className='nav-box-link'
         >
           <div
