@@ -29,18 +29,23 @@ const Forum = () => {
       clearCategory();
       handleCategoryClick(c.note_category);
     }} key={c.note_category}>{c.note_category}</div>)
-    // notes.map(n => <Note key={n.note_id} id={n.note_id} title={n.note_title} content={n.note_content} category={n.note_category}/>)
+
   }
 
 
 
   return (
-    <div aria-label='note'>
-      <div>
-        {showCategory()}
+    <>
+      <div aria-label='note'>
+        <div>
+          {showCategory()}
+        </div>
+        {categoryId && <PublicNote id={categoryId} />}
       </div>
-      {categoryId && <PublicNote id={categoryId} />}
-    </div>
+      <div>
+        <Comment>asdas</Comment>
+      </div>
+    </>
   )
 }
 
