@@ -1,6 +1,7 @@
 import React from 'react';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { screen, render, cleanup, getByRole } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { BrowserRouter } from 'react-router-dom';
 
@@ -19,6 +20,6 @@ describe('Home', () => {
         cleanup();
     })
 
- 
+    
 
 })
