@@ -12,7 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [decoded, setDecoded] = useState();
   const navigate = useNavigate();
-  const { user, setUser } = useAuth();
+  const { user, setUser, user_name, setUser_name } = useAuth();
 
 
 
@@ -30,14 +30,18 @@ const Login = () => {
       const response = await axios.post("http://localhost:3000/login", data)
       const token = response.data.token[0]
       const decoded = decodeToken(token);
+
       localStorage.setItem("user", decoded.sub)
+      localStorage.setItem("user_name", decoded.username)
     } catch (err) {
       console.log(err);
     }
 
     setUser(localStorage.getItem("user"))
+    setUser_name(localStorage.getItem("user_name"))
 
     console.log(user)
+    console.log(user_name)
     navigate("/");
 
   };

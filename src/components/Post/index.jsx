@@ -1,15 +1,19 @@
-import React, { useState } from 'react'
-import './styles.css'
 
-const Post = ({ handleCancel}) => {
-  const [showImage, setShowImage] = useState(false)
-  const [inputTitle, setInputTitle] = useState('')
-  const [inputNote, setInputNote] = useState('')
-  const [inputCategory, setInputCategory] = useState('')
-  const [visibility, setVisibility] = useState(false)
-  const [fileInput, setFileInput] = useState('')
-  const [selectedFile, setSelectedFile] = useState('')
-  const [previewSource, setPreviewSource] = useState()
+import React, { useState } from 'react';
+import './styles.css';
+import { useAuth } from '../../context';
+
+const Post = ({ handleCancel }) => {
+  const { user_name } = useAuth()
+  const [showImage, setShowImage] = useState(false);
+  const [inputTitle, setInputTitle] = useState('');
+  const [inputNote, setInputNote] = useState('');
+  const [inputCategory, setInputCategory] = useState('');
+  const [visibility, setVisibility] = useState(false);
+  const [fileInput, setFileInput] = useState('');
+  const [selectedFile, setSelectedFile] = useState('');
+  const [previewSource, setPreviewSource] = useState('');
+
 
   function handleTitle(e) {
     setInputTitle(e.target.value)
@@ -84,47 +88,47 @@ const Post = ({ handleCancel}) => {
   }
   return (
     <>
-    <div className='post-form-container'>
+      <div className='post-form-container'>
         <div className='post-form-wrapper'>
-            <section className='post'>
-                <header>Create Note</header>
-                <form>
-                  <div className='content'>
-                    <img src='' alt=''/>
-                    <div className='details'>
-                      <p>Username</p>
-                      <div className='privacy'>
-                        <span onClick={handleVisbility}>{visibility ? 'Public': 'Private'}</span>
-                      </div>
-                    </div>
+          <section className='post'>
+            <header>Create Note</header>
+            <form>
+              <div className='content'>
+                <img src='' alt='' />
+                <div className='details'>
+                  <p>{user_name}</p>
+                  <div className='privacy'>
+                    <span onClick={handleVisbility}>{visibility ? 'Public' : 'Private'}</span>
                   </div>
-                  <input className='note-input-title' placeholder='Title?' value={inputTitle} onChange={handleTitle}/>
-                  <textarea placeholder="what's on your mind UserName" value={inputNote} onChange={handleNote}></textarea>
-                  <input className='note-input-category' placeholder='category?' value={inputCategory} onChange={handleCategory}/>
-                  <div onClick={handleImageClick} className='options'>
-                    <p>Add images to your note..</p>
-                  </div>
-                  <button onClick={handlePost}>Post</button>
-                  <button onClick={handleCancel}>Cancel</button>
-                </form>
-            </section>
+                </div>
+              </div>
+              <input className='note-input-title' placeholder='Title?' value={inputTitle} onChange={handleTitle} />
+              <textarea placeholder="what's on your mind UserName" value={inputNote} onChange={handleNote}></textarea>
+              <input className='note-input-category' placeholder='category?' value={inputCategory} onChange={handleCategory} />
+              <div onClick={handleImageClick} className='options'>
+                <p>Add images to your note..</p>
+              </div>
+              <button onClick={handlePost}>Post</button>
+              <button onClick={handleCancel}>Cancel</button>
+            </form>
+          </section>
         </div>
-    </div>
-    <div>
-      {showImage ? (
-        <div>
-          <div onClick={handleCloseImage}>X</div>
-          <form className='imageForm' onSubmit={handleSubmitFile}>
-            <label for="imageURL">URL</label>
-            <input placeholder='Post your url here..' type="file" id="imageURL" name="imageURL" value={fileInput} onChange={handleFileInput}/>
-            <button type='submit'>Submit</button>
-          </form>
-          {previewSource && (
-            <img src={previewSource} alt='chosen image' style={{height: '300px'}}/>
-          )}
-        </div>
-      ):(<div></div>)}
-    </div>
+      </div>
+      <div>
+        {showImage ? (
+          <div>
+            <div onClick={handleCloseImage}>X</div>
+            <form className='imageForm' onSubmit={handleSubmitFile}>
+              <label for="imageURL">URL</label>
+              <input placeholder='Post your url here..' type="file" id="imageURL" name="imageURL" value={fileInput} onChange={handleFileInput} />
+              <button type='submit'>Submit</button>
+            </form>
+            {previewSource && (
+              <img src={previewSource} alt='chosen image' style={{ height: '300px' }} />
+            )}
+          </div>
+        ) : (<div></div>)}
+      </div>
     </>
   )
 }
