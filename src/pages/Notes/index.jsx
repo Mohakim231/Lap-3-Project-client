@@ -25,7 +25,7 @@ const Notes = () => {
       {privateNote.map((e, i) => (
         < div className='note-wrapper' key={e.note_id} >
           <div className='note-title'>{e.note_title}</div>
-          <div className='note-content'>
+          <div className='note-content' aria-label="note content">
             <div>{e.note_content}</div>
             <p>{e.note_category}</p>
             <img src='' alt='' />
