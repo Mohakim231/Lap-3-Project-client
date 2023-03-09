@@ -16,14 +16,14 @@ describe('Post component', () => {
     })
 
     it('should display a textbox', () => {
-        const textbox = screen.getByLabelText("what's on your mind");
+        const textbox = screen.getByLabelText("whats on your mind");
 
         expect(textbox).toBeInTheDocument()
     })
 
     it('should have post and delete buttons', () => {
         const postButton = screen.getByLabelText("post button")
-        const deleteButton = screen.getByLabelText("delete button")
+        const deleteButton = screen.getByLabelText("cancel button")
 
         expect (postButton, deleteButton).toBeInTheDocument();
     })

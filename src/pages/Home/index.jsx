@@ -12,6 +12,7 @@ const Home = () => {
         >
           <div
             className='nav-box'
+            aria-label="notes box link"
           >
             Notes
           </div>
@@ -19,9 +20,11 @@ const Home = () => {
         <Link
           to='/'
           className='nav-box-link'
+          aria-label='public notes box link'
         >
           <div
             className='nav-box'
+            
           >
             Public Notes
           </div>
@@ -32,6 +35,7 @@ const Home = () => {
         >
           <div
             className='nav-box'
+            aria-label='send notes box link'
           >
             Send Notes
           </div>
@@ -42,6 +46,7 @@ const Home = () => {
         >
           <div
             className='nav-box'
+            aria-label='forum box link'
           >
             Forum
           </div>

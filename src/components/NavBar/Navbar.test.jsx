@@ -39,7 +39,7 @@ describe('NavBar component', () => {
         const link = screen.getByLabelText("notes page")
         
         await userEvent.click(link)
-        expect(window.location.pathname).toBe("/create")
+        expect(window.location.pathname).toBe("/notes")
     })
 
     it('takes you to the Home page when link is clicked', async () => {
