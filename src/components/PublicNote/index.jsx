@@ -20,13 +20,13 @@ const PublicNote = (props) => {
     return (
         <>
             {note.map((e, i) => (
-                < div className='note-wrapper' key={e.note_id} >
+                < div className={`note-wrapper ${i % 3 === 0 ? 'purple' : i % 3 === 1 ? 'yellow' : 'green'}`} key={e.note_id} >
                     <div className='note-title'>{e.note_title}</div>
                     <div className='note-content'>
                         <div>{e.note_content}</div>
-                        <p>{e.note_category}</p>
                         <img src='' alt='' />
                     </div>
+                    <p className='category-note-page'>{e.note_category}</p>
                 </div >
             ))}
         </>

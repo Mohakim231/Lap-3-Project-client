@@ -1,0 +1,30 @@
+.forum-notes-wrapper{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 5px;
+    row-gap: 45px;
+    width: 70%;
+    margin: auto;
+}
+.category-choice-wrapper{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.category-choice{
+    background-color: black;
+    color: white;
+    width: 100px;
+    padding: 10px 5px 10px 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.5em;
+    border-radius: 5px;
+    font-weight: 800;
+    overflow: hidden;
+}

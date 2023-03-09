@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { PublicNote } from '../../components';
 
+import './styles.css'
+
 const Forum = () => {
   const [category, setCategory] = useState([]);
   const [categoryId, setCategoryId] = useState('')
@@ -25,7 +27,7 @@ const Forum = () => {
 
 
   function showCategory() {
-    return category.map(c => <div onClick={() => {
+    return category.map(c => <div className='category-choice' onClick={() => {
       clearCategory();
       handleCategoryClick(c.note_category);
     }} key={c.note_category}>{c.note_category}</div>)
@@ -46,6 +48,7 @@ const Forum = () => {
         <Comment>asdas</Comment>
       </div>
     </>
+
   )
 }
 
