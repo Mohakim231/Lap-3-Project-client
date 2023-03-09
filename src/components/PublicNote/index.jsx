@@ -9,7 +9,7 @@ const PublicNote = (props) => {
 
 
         const fetchItem = async () => {
-            const response = await axios.post(`http://localhost:3000/note/forum/${category}`, ({ "category": `${category}` }));
+            const response = await axios.get(`http://localhost:3000/note/forum/${category}`, ({ "category": `${category}` }));
             console.log(response.data)
             setNote(response.data)
         }
