@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from '../../api/axios';
-
+import { CommentPost } from '../index'
 
 const PublicNote = (props) => {
     const category = props.id
@@ -28,10 +28,10 @@ const PublicNote = (props) => {
                         <img src='' alt='' />
                     </div>
                     <p className='category-note-page'>{e.note_category}</p>
-                    {/* <CommentPost note_id={e.note_id} /> */}
+                    <CommentPost note_id={e.note_id} />
                 </div >
-
             ))}
+
         </>
     )
 }
