@@ -20,10 +20,11 @@ const Home = () => {
         <Link
           to='/'
           className='nav-box-link'
+          aria-label='public notes box link'
         >
           <div
             className='nav-box'
-            aria-label='public notes box link'
+            
           >
             Public Notes
           </div>

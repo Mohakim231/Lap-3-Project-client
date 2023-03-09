@@ -13,7 +13,11 @@ import Home from '.';
 
 describe('Home', () => {
     beforeEach(() => {
-        render(<Home />);
+        render(
+            <BrowserRouter>
+                <Home />
+            </BrowserRouter>
+        );
     })
 
     afterEach(() => {
@@ -26,4 +30,22 @@ describe('Home', () => {
         expect(window.location.pathname).toBe("/notes");
     })
 
-})
+    it("takes you to the public notes page when th epublic notes box is clicked", async () => {
+        const link = screen.getByLabelText("public notes box link");
+        await userEvent.click(link);
+        expect(window.location.pathname).toBe("/Public");
+    });
+
+    it("takes you to the public notes page when the public notes box is clicked", async () => {
+        const link = screen.getByLabelText("public notes box link");
+        await userEvent.click(link);
+        expect(window.location.pathname).toBe("/Public");
+    });
+
+    it("take you to the forum page when the forum box is clicked", async () => {
+        const link = screen.getByLabelText("forum box link");
+        await userEvent.click(link);
+        expect(window.location.pathname).toBe("/forum");
+    })
+
+});
