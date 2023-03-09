@@ -7,6 +7,7 @@ const Forum = () => {
   const [category, setCategory] = useState([]);
   const [categoryId, setCategoryId] = useState('')
 
+
   const handleCategoryClick = (id) => {
     setCategoryId(id)
   }
@@ -43,9 +44,6 @@ const Forum = () => {
           {showCategory()}
         </div>
         {categoryId && <PublicNote id={categoryId} />}
-      </div>
-      <div>
-        <Comment>asdas</Comment>
       </div>
     </>
 
