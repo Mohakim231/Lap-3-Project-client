@@ -1,22 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import { useAuth } from "../../context"
 
 const Notes = () => {
-  const [userId, setUserId] = useState(1)
+  const { user, setUser } = useAuth();
   const [privateNote, setPrivateNote] = useState([]);
 
-  useEffect(() => {
 
+  useEffect(() => {
+    const userid = localStorage.getItem("user")
     const fetchNote = async () => {
 
-      const response = await axios.post(`http://localhost:3000/note/private`, ({ "user_id": userId }))
+      const response = await axios.post(`http://localhost:3000/note/private`, ({ "user_id": userid }))
+
+      console.log(response)
       setPrivateNote(response.data);
-      console.log(privateNote)
+      console.log(user)
     }
 
     fetchNote()
 
-  }, [])
+  }, [user])
 
 
 
