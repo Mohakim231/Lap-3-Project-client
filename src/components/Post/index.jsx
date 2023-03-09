@@ -126,13 +126,13 @@ const Post = ({ handleCancel }) => {
                     </div>
                   </div>
                   <input className='note-input-title' placeholder='Title?' value={inputTitle} onChange={handleTitle}/>
-                  <textarea placeholder="what's on your mind UserName" value={inputNote} onChange={handleNote}></textarea>
+                  <textarea placeholder="what's on your mind UserName" value={inputNote} onChange={handleNote} aria-label="whats on your mind"></textarea>
                   <input className='note-input-category' placeholder='category?' value={inputCategory} onChange={handleCategory}/>
                   <div onClick={handleImageClick} className='options'>
                     <p>Add images to your note..</p>
                   </div>
-                  <button onClick={handlePost}>Post</button>
-                  <button onClick={handleCancel}>Cancel</button>
+                  <button onClick={handlePost} aria-label="post button">Post</button>
+                  <button onClick={handleCancel} aria-label="cancel button">Cancel</button>
                 </form>
             </section>
         </div>
