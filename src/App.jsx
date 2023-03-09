@@ -1,8 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import { Create, Forum, Home, PublicNote, Signup, Login } from './pages';
-import SecureRoute from './components/SecureRoute';
+import { Create, Forum, Home, Signup, Login } from './pages';
 
 function App() {
   return (
@@ -14,7 +13,6 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/forum" element={<Forum />} />
           <Route path="/create" element={<Create />} />
-          <Route path="/Public" element={<PublicNote />} />
         </Route>
       </Routes>
     </div>
