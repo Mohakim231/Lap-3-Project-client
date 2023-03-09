@@ -3,14 +3,13 @@ import axios from '../../api/axios';
 
 const PublicNote = (props) => {
     const category = props.id
-    const [note, setNote] = useState('');
+    const [note, setNote] = useState([]);
 
     useEffect(() => {
 
 
         const fetchItem = async () => {
-            const response = await axios.post(`http://localhost:3000/note/forum/${category}`, ({ "category": `${category}` }));
-            console.log(response.data)
+            const response = await axios.get(`http://localhost:3000/forum/${category}`, ({ "category": `${category}` }));
             setNote(response.data)
         }
 
@@ -19,14 +18,18 @@ const PublicNote = (props) => {
     }, [category]);
 
     return (
-        <div className='note-wrapper' key={note.note_id}>
-            <div className='note-title'>{note.note_title}</div>
-            <div className='note-content'>
-                <div>{note.note_content}</div>
-                <p>{note.note_category}</p>
-                <img src='' alt='' />
-            </div>
-        </div>
+        <>
+            {note.map((e, i) => (
+                < div className={`note-wrapper ${i % 3 === 0 ? 'purple' : i % 3 === 1 ? 'yellow' : 'green'}`} key={e.note_id} >
+                    <div className='note-title'>{e.note_title}</div>
+                    <div className='note-content'>
+                        <div>{e.note_content}</div>
+                        <img src='' alt='' />
+                    </div>
+                    <p className='category-note-page'>{e.note_category}</p>
+                </div >
+            ))}
+        </>
     )
 }
 
