@@ -8,13 +8,13 @@ import { BrowserRouter } from 'react-router-dom';
 import matchers from '@testing-library/jest-dom/matchers';
 expect.extend(matchers);
 
-import Create from '.'
+import Notes from '.'
 
-describe('create page', () => {
+describe('Notes page', () => {
     beforeEach(() => {
         render(
             <BrowserRouter>
-                <Create />
+                <Notes />
             </BrowserRouter>
         )
     })
@@ -23,4 +23,8 @@ describe('create page', () => {
         cleanup();
     })
 
+    it('should have note content on the page', () => {
+        const noteContent = screen.getByLabelText("note content");
+        expect(noteContent).toBeInTheDocument();
+    })
 })
