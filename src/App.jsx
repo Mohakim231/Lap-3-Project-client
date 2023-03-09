@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import { Create, Forum, Home, Signup, Login } from './pages';
+import { Notes, Forum, Home, Signup, Login } from './pages';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forum" element={<Forum />} />
-          <Route path="/create" element={<Create />} />
+          <Route path="/notes" element={<Notes />} />
         </Route>
       </Routes>
     </div>

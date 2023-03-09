@@ -47,8 +47,9 @@ const NavBar = () => {
                   Home
                 </li>
               </NavLink>
-              <NavLink
-                to='/create'
+              <NavLink 
+                to='/notes'
+
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 className='nav-links'
                 onClick={handleLinkClick}
