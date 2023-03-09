@@ -31,7 +31,6 @@ const Forum = () => {
       clearCategory();
       handleCategoryClick(c.note_category);
     }} key={c.note_category}>{c.note_category}</div>)
-
   }
 
 
