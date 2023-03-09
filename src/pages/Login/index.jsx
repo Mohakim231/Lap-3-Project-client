@@ -23,7 +23,10 @@ const Login = () => {
       const response = await axios.post("http://localhost:3000/login", data);
 
       // check what you are getting. 
+
       // save the sub (which is the id) to a state*(useContext)
+
+
       console.log(response.data);
 
     } catch (err) {
@@ -50,5 +53,6 @@ const Login = () => {
     </form>
   );
 };
+
 
 export default Login;

@@ -5,7 +5,7 @@ import { Post } from '../../components';
 
 const NavBar = () => {
   const activeStyle = {
-    textDecoration:'underline',
+    textDecoration: 'underline',
     color: '#17cf97'
   }
 
@@ -37,7 +37,7 @@ const NavBar = () => {
           <>
             <h1 className='nav-heading'>Notes</h1>
             <ul className='nav-list'>
-              <NavLink 
+              <NavLink
                 to='/'
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 className='nav-links'
@@ -46,7 +46,7 @@ const NavBar = () => {
                   Home
                 </li>
               </NavLink>
-              <NavLink 
+              <NavLink
                 to='/create'
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 className='nav-links'
@@ -56,7 +56,7 @@ const NavBar = () => {
                   Notes
                 </li>
               </NavLink>
-              <NavLink 
+              <NavLink
                 to='/Public'
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 className='nav-links'
@@ -66,7 +66,7 @@ const NavBar = () => {
                   Public Notes
                 </li>
               </NavLink>
-              <NavLink 
+              <NavLink
                 to='/forum'
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
                 className='nav-links'
