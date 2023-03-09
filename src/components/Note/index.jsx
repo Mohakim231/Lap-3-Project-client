@@ -7,9 +7,8 @@ const Note = ({ id, title, content, category}) => {
         <div className='note-title' aria-label='noteTitle'>{title}</div>
         <div className='note-content'>
             <div>{content}</div>
-            <p>{category}</p>
-            <img src='' alt=''/>
         </div>
+        <p className='category-note-page'>{category}</p>
     </div>
   )
 }
