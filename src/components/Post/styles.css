@@ -108,3 +108,21 @@ form .options .list{
     font-size: 22px;
     font-weight: 600;
 }
+.post-note-button-note{
+    height: 30px;
+    max-width: 80px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 700;
+    color: black;
+}
+.post-note-button-cancel{
+    height: 30px;
+    max-width: 80px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 700;
+    color: white;
+    background-color: red;
+}
