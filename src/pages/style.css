@@ -86,14 +86,14 @@
   h2 {
     margin-top: 0;
     margin-bottom: 20px;
-    color: white;
+    color: black;
   }
   
   div {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-    color: white;
+    color: black;
   }
   
   label {

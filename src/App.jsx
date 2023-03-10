@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <AuthProvider>
         <Routes>
+            <Route path="/login" element={<Login />} index />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/login" element={<Login />} />
           <Route path="/" element={<NavBar />}>
             <Route index element={<Home />} />
             <Route path="/forum" element={<Forum />} />
