@@ -9,10 +9,10 @@ function App() {
     <div className="App">
       <AuthProvider>
         <Routes>
-          <Route path="/" element={<NavBar />}>
-            <Route index element={<Home />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
+          <Route path="/" element={<NavBar />}>
+            <Route index element={<Home />} />
             <Route path="/forum" element={<Forum />} />
             <Route path="/notes" element={<Notes />} />
             <Route path='/Public' element={<PublicNotes/>}/>

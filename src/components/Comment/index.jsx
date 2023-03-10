@@ -22,6 +22,24 @@ const CommentPost = (props) => {
         fetchItem()
     }, []);
 
+    function handleCommintSubmit(e) {
+        e.preventDefault();
+        if (commentText.length > 0) {
+            fetch('http://localhost:3000/comment', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+                body: JSON.stringify({ title: inputTitle, content: inputNote, category: inputNote, user_id: 1, isPublic: visibility })
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                })
+
+        } else {
+            window.alert('Post cannot be empty')
+        }
+    }
 
 
     const getUsername = async (user) => {
@@ -41,15 +59,15 @@ const CommentPost = (props) => {
             <div className='post-comment'>
                 <p className='exit' onClick={close}>x</p>
                 <h1 className='comments'>Comments</h1>
-                {comments.map((e, i) => (<div key={i} className='comment-content-wrapper'><p className='username-comment'>username: {getUsername(e.user_id)[0]} {username} </p>
+                {comments.map((e, i) => (<div key={i} className='comment-content-wrapper'><p className='username-comment'>username:{getUsername(e.user_id)[0]}{username} </p>
                     <p className='comment-content'>{e.comment_content}</p></div>))}
             </div>
-            {/* <div className='submit-comment'>
-                <form onSubmit={handleSubmit}>
+            <div className='submit-comment'>
+                <form onSubmit={handleCommintSubmit}>
                     <textarea value={commentText} onChange={(e) => setCommentText(e.target.value)} />
                     <button type='submit'>Submit</button>
                 </form>
-            </div> */}
+            </div>
         </>
     )
 }
