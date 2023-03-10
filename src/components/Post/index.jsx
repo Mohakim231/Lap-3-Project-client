@@ -4,7 +4,7 @@ import './styles.css';
 import { useAuth } from '../../context';
 
 const Post = ({ handleCancel }) => {
-  const { user_name } = useAuth()
+  const { user_name, user } = useAuth()
   const [showImage, setShowImage] = useState(false);
   const [inputTitle, setInputTitle] = useState('');
   const [inputNote, setInputNote] = useState('');
@@ -44,11 +44,14 @@ const Post = ({ handleCancel }) => {
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
-        body: JSON.stringify({ title: inputTitle, content: inputNote, category: inputNote, user_id: 1, isPublic: visibility})
+        body: JSON.stringify({ title: inputTitle, content: inputNote, category: inputNote, user_id: user, isPublic: visibility})
       })
       .then((res) => res.json())
       .then((data) => {
         window.alert('Post Submitted')
+        setInputTitle('')
+        setInputNote('')
+        setInputCategory('')
       })
 
     } else {

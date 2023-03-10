@@ -8,6 +8,7 @@ const CommentPost = (props) => {
     const [comments, setComments] = useState([])
     const [commentText, setCommentText] = useState('');
     const [refresh, setRefresh] = useState(0)
+    const [username, setUsername] = useState('')
 
     useEffect(() => {
 
@@ -42,6 +43,14 @@ const CommentPost = (props) => {
         }
       }
 
+      const getUsername = async (user) => {
+
+        console.log(" this is the " + user)
+        const response_username = await axios.get(`http://localhost:3000/user/${user}`)
+        setUsername(response_username.data.username)
+
+    }
+
 
     return (
 
@@ -51,16 +60,16 @@ const CommentPost = (props) => {
             <div className='post-comment'>
                 <p className='exit' onClick={close}>x</p>
                 <h1 className='comments'>Comments</h1>
-                {comments.map((e, i) => (<div key={i} className='comment-content-wrapper'><p className='username-comment'>{e.user_id}</p>
+                {comments.map((e, i) => (<div key={i} className='comment-content-wrapper'><p className='username-comment'>{getUsername(e.user_id)[0]}{username}</p>
                 <p className='comment-content'>{e.comment_content}</p></div>))}
-                <button>Comment</button>
-            </div>
-            <div className='submit-comment'>
+                <div className='submit-comment'>
                 <form onSubmit={handleCommintSubmit}>
-                    <textarea value={commentText} onChange={(e) => setCommentText(e.target.value)} />
+                    <textarea className='comment-textarea' placeholder={`Whats on your mind ${username}`} value={commentText} onChange={(e) => setCommentText(e.target.value)} />
                     <button type='submit'>Submit</button>
                 </form>
+              </div>
             </div>
+            
         </>
     )
 }
