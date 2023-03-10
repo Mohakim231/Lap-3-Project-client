@@ -1,0 +1,39 @@
+.commentSection{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 400px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    z-index: 50;
+}
+.comments{
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+.comment-content-wrapper{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.username-comment{
+    margin: 0;
+}
+.comment-content{
+    border-bottom: 1px solid rgba(202, 202, 202, 0.719);
+    margin: 0;
+    padding-bottom: 10px;
+}
+.comments-show-button{
+    background: none;
+    border: none;
+    color: gray;
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+    padding-right: 20px;
+    padding-bottom: 18px;
+}

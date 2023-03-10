@@ -1,22 +1,35 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import axios from '../../api/axios';
 import { CommentPost } from '../index'
 
 const PublicNote = (props) => {
-    const category = props.id
+    const category = props.id;
     const [note, setNote] = useState([]);
+    const [selectedNoteId, setSelectedNoteId] = useState(null);
+    const [showCommentSection, setShowCommentSection] = useState(false);
 
     useEffect(() => {
-
-
         const fetchItem = async () => {
-            const response = await axios.get(`http://localhost:3000/forum/${category}`, ({ "category": `${category}` }));
-            setNote(response.data)
-        }
+            const response = await axios.get(`http://localhost:3000/forum/${category}`, { category });
+            setNote(response.data);
+        };
 
-
-        fetchItem()
+        fetchItem();
     }, [category]);
+
+    const handleNoteClick = (noteId) => {
+        if (selectedNoteId === noteId) {
+            setShowCommentSection((prevShowCommentSection) => !prevShowCommentSection);
+        } else {
+            setSelectedNoteId(noteId);
+            setShowCommentSection(true);
+        }
+    };
+
+    const handleCloseCommentSection = () => {
+        setSelectedNoteId(null);
+        setShowCommentSection(false);
+    };
 
     return (
         <>
@@ -35,5 +48,7 @@ const PublicNote = (props) => {
         </>
     )
 }
+
+
 
 export default PublicNote
