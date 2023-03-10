@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from "../../context"
 import { decodeToken } from "react-jwt";
-import '../style.css';
+// import '../style.css';
 
 
 
