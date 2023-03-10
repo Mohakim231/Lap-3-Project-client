@@ -37,3 +37,9 @@
     font-weight: 800;
     overflow: hidden;
 }
+.exit{
+    position: absolute;
+    padding-left: 10px;
+    font-size: 2em;
+    margin: 0;
+}
