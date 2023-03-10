@@ -24,3 +24,17 @@ nav{
     font-size: 2em;
     color: white;
 }
+.nav-menu-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.create-post-button{
+    color: white;
+    font-weight: bolder;
+    font-size: 3em;
+}
+.back-button{
+    color: white;
+    font-weight: bolder;
+    font-size: 3em;
+}

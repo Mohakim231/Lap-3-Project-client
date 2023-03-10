@@ -10,8 +10,8 @@ const Post = ({ handleCancel }) => {
   const [inputNote, setInputNote] = useState('');
   const [inputCategory, setInputCategory] = useState('');
   const [visibility, setVisibility] = useState(false);
-  const [fileInput, setFileInput] = useState('');
-  const [selectedFile, setSelectedFile] = useState('');
+  // const [fileInput, setFileInput] = useState('');
+  // const [selectedFile, setSelectedFile] = useState('');
   const [previewSource, setPreviewSource] = useState('');
 
 
@@ -48,44 +48,44 @@ const Post = ({ handleCancel }) => {
       })
       .then((res) => res.json())
       .then((data) => {
-        window.alert('well done mo you are smart')
+        window.alert('Post Submitted')
       })
 
     } else {
-      window.alert('cant be empty can it')
+      window.alert('Post cannot be empty')
     }
   }
 
-  const handleFileInput = (e) => {
-    const file = e.target.files[0]
-    preview(file)
-  }
-  const preview = (file) => {
-    const reader = new FileReader()
-    reader.readAsDataURL(file)
-    reader.onloadend = () => {
-      setPreviewSource(reader.result)
-    }
-  }
+  // const handleFileInput = (e) => {
+  //   const file = e.target.files[0]
+  //   preview(file)
+  // }
+  // const preview = (file) => {
+  //   const reader = new FileReader()
+  //   reader.readAsDataURL(file)
+  //   reader.onloadend = () => {
+  //     setPreviewSource(reader.result)
+  //   }
+  // }
 
-  const uploadImage = async(base64EncodedImage) =>{
-    console.log(base64EncodedImage)
-    try {
-      await fetch('',{
-        method: 'POST',
-        body: JSON.stringify({data: base64EncodedImage}),
-        headers: {'Content-type': 'application/json'}
-      })
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  // const uploadImage = async(base64EncodedImage) =>{
+  //   console.log(base64EncodedImage)
+  //   try {
+  //     await fetch('',{
+  //       method: 'POST',
+  //       body: JSON.stringify({data: base64EncodedImage}),
+  //       headers: {'Content-type': 'application/json'}
+  //     })
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
-  const handleSubmitFile = (e) => {
-    e.preventDefault()
-    if(!previewSource) return
-    uploadImage(previewSource)
-  }
+  // const handleSubmitFile = (e) => {
+  //   e.preventDefault()
+  //   if(!previewSource) return
+  //   uploadImage(previewSource)
+  // }
   return (
     <>
       <div className='post-form-container'>
@@ -114,7 +114,7 @@ const Post = ({ handleCancel }) => {
           </section>
         </div>
       </div>
-      <div>
+      {/* <div>
         {showImage ? (
           <div>
             <div onClick={handleCloseImage}>X</div>
@@ -128,7 +128,7 @@ const Post = ({ handleCancel }) => {
             )}
           </div>
         ) : (<div></div>)}
-      </div>
+      </div> */}
     </>
   )
 }
