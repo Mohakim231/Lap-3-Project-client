@@ -1,6 +1,6 @@
-/*Styling for Signup and Login page*/
+Styling for Signup and Login page*/
 
-/* Signup.css */
+Signup.css
 
 .signup-container {
     display: flex;
@@ -63,7 +63,7 @@
   
   /* Login.css */
   
-  .login-form {
+  /* .login-form {
     display: flex;
     justify-content: center;
     align-items: center;
