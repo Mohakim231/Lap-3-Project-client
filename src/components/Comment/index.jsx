@@ -7,6 +7,7 @@ const CommentPost = (props) => {
     const close = props.handleCloseCommentSection
     const [comments, setComments] = useState([])
     const [commentText, setCommentText] = useState('');
+    const [refresh, setRefresh] = useState(0)
 
     useEffect(() => {
 
@@ -19,24 +20,25 @@ const CommentPost = (props) => {
 
 
         fetchItem()
-    }, []);
+    }, [refresh]);
 
     function handleCommintSubmit(e){
         e.preventDefault();
         if(commentText.length > 0){
-          fetch('http://localhost:3000/comment',{
+          fetch('http://localhost:3000/forum/comment',{
             method: 'POST',
             headers: {
               'Content-type': 'application/json; charset=UTF-8',
             },
-            body: JSON.stringify({ title: inputTitle, content: inputNote, category: inputNote, user_id: 1, isPublic: visibility})
+            body: JSON.stringify({ comment_content: commentText, user_id: 4, note_id: note_id})
           })
           .then((res) => res.json())
           .then((data) => {
+            setRefresh(prevState => prevState + 1)
           })
     
         } else {
-          window.alert('Post cannot be empty')
+          window.alert('Comment cannot be empty')
         }
       }
 
