@@ -32,9 +32,11 @@ nav{
     color: white;
     font-weight: bolder;
     font-size: 3em;
+    cursor: pointer;
 }
 .back-button{
     color: white;
     font-weight: bolder;
     font-size: 3em;
+    cursor: pointer;
 }
