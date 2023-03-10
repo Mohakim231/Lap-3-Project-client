@@ -4,13 +4,10 @@ import React, { useState, useEffect } from 'react'
 const CommentPost = (props) => {
 
     const note_id = props.note_id
-<<<<<<< HEAD
-    const [comments, setComments] = useState([])
-=======
     const close = props.handleCloseCommentSection
     const [comments, setComments] = useState([])
     const [commentText, setCommentText] = useState('');
->>>>>>> e38320edbea50b17b9b89b4a7f6eda917065da16
+    const [username, setUsername] = useState("")
 
     useEffect(() => {
 
@@ -24,11 +21,16 @@ const CommentPost = (props) => {
 
         fetchItem()
     }, []);
-<<<<<<< HEAD
 
-=======
->>>>>>> e38320edbea50b17b9b89b4a7f6eda917065da16
 
+
+    const getUsername = async (user) => {
+
+        console.log(" this is the " + user)
+        const response_username = await axios.get(`http://localhost:3000/user/${user}`)
+        setUsername(response_username.data.username)
+
+    }
 
 
     return (
@@ -37,14 +39,10 @@ const CommentPost = (props) => {
         <>
 
             <div className='post-comment'>
-<<<<<<< HEAD
-                {comments.map((e, i) => (<p key={i}> user id: {e.user_id}  content: {e.comment_content} </p>))}
-=======
                 <p className='exit' onClick={close}>x</p>
                 <h1 className='comments'>Comments</h1>
-                {comments.map((e, i) => (<div key={i} className='comment-content-wrapper'><p className='username-comment'>{e.user_id}</p>
-                <p className='comment-content'>{e.comment_content}</p></div>))}
->>>>>>> e38320edbea50b17b9b89b4a7f6eda917065da16
+                {comments.map((e, i) => (<div key={i} className='comment-content-wrapper'><p className='username-comment'>username: {getUsername(e.user_id)[0]} {username} </p>
+                    <p className='comment-content'>{e.comment_content}</p></div>))}
             </div>
             {/* <div className='submit-comment'>
                 <form onSubmit={handleSubmit}>
